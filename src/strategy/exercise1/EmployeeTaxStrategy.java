@@ -8,7 +8,7 @@
 
 package strategy.exercise1;
 
-public class EmployeeTaxStrategy implements TaxStrategy {
+public final class EmployeeTaxStrategy implements TaxStrategy {
     private static final double RATE = 0.45;
 
     public double extortCash(double income) {

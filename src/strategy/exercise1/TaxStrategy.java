@@ -8,7 +8,8 @@
 package strategy.exercise1;
 
 //DON'T CHANGE
-@FunctionalInterface
-public interface TaxStrategy {
+public sealed interface TaxStrategy
+    permits CompanyTaxStrategy, EmployeeTaxStrategy, TrustTaxStrategy {
+
     double extortCash(double income);
 }

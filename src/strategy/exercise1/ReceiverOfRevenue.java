@@ -17,5 +17,11 @@ public class ReceiverOfRevenue {
         System.out.println(heinz.extortCash());
         System.out.println(maxsol.extortCash());
         System.out.println(family.extortCash());
+        // TaxPayer anon = new TaxPayer(new TaxStrategy() {
+        //     public double extortCash(double income) {
+        //         return 0;
+        //     }
+        // }, 100_000_000_000.0);
+        // System.out.println(anon.extortCash());
     }
 }
