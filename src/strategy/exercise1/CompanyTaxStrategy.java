@@ -8,7 +8,7 @@
 
 package strategy.exercise1;
 
-public final class CompanyTaxStrategy implements TaxStrategy {
+public final class CompanyTaxStrategy extends NonNaturalTaxStrategy {
     private static final double RATE = 0.30;
 
     public double extortCash(double income) { // extrinsic
