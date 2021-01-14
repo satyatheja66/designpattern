@@ -9,6 +9,8 @@ package proxy.exercise1;
 
 //DON'T CHANGE
 public abstract class Scandinavian {
+    private final Lutefisk lutefisk = new VirtualLutefisk();
+
     public abstract void work();
 
     public abstract void learn();
@@ -16,4 +18,8 @@ public abstract class Scandinavian {
     public abstract void celebrateChristmas();
 
     public abstract void entertain();
+
+    protected void eatLutefisk() {
+        lutefisk.eat();
+    }
 }

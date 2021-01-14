@@ -8,8 +8,6 @@
 package proxy.exercise1;
 
 public class Norwegian extends Scandinavian {
-    protected final Lutefisk lutefisk = new VirtualLutefisk();
-
     public void work() {
         System.out.println("Working hard whilst it is dark outside.");
     }
@@ -19,7 +17,7 @@ public class Norwegian extends Scandinavian {
     }
 
     public void celebrateChristmas() {
-        lutefisk.eat();
+        eatLutefisk();
     }
 
     public void entertain() {
