@@ -16,10 +16,22 @@ public class TaxPayer {
     public static final double TRUST_RATE = 0.35;
 
     private final double income;
-    private final int type;
+    private final TaxStrategy taxStrategy;
 
     public TaxPayer(int type, double income) {
-        this.type = type;
+        switch (type) {
+            case COMPANY:
+                taxStrategy = new CompanyTaxStrategy(income);
+                break;
+            case EMPLOYEE:
+                taxStrategy = new EmployeeTaxStrategy(income);
+                break;
+            case TRUST:
+                taxStrategy = new TrustTaxStrategy(income);
+                break;
+            default:
+                throw new IllegalArgumentException();
+        }
         this.income = income;
     }
 
@@ -28,15 +40,6 @@ public class TaxPayer {
     }
 
     public double extortCash() {
-        switch (type) {
-            case COMPANY:
-                return income * COMPANY_RATE;
-            case EMPLOYEE:
-                return income * EMPLOYEE_RATE;
-            case TRUST:
-                return income * TRUST_RATE;
-            default:
-                throw new IllegalArgumentException();
-        }
+        return taxStrategy.extortCash();
     }
 }
