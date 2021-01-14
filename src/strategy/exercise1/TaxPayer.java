@@ -19,19 +19,12 @@ public class TaxPayer {
     private final TaxStrategy taxStrategy;
 
     public TaxPayer(int type, double income) {
-        switch (type) {
-            case COMPANY:
-                taxStrategy = new CompanyTaxStrategy();
-                break;
-            case EMPLOYEE:
-                taxStrategy = new EmployeeTaxStrategy();
-                break;
-            case TRUST:
-                taxStrategy = new TrustTaxStrategy();
-                break;
-            default:
-                throw new IllegalArgumentException();
-        }
+        taxStrategy = switch (type) {
+            case COMPANY -> new CompanyTaxStrategy();
+            case EMPLOYEE -> new EmployeeTaxStrategy();
+            case TRUST -> new TrustTaxStrategy();
+            default -> throw new IllegalArgumentException();
+        };
         this.income = income;
     }
 

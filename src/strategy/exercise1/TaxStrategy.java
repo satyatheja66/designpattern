@@ -8,6 +8,7 @@
 package strategy.exercise1;
 
 //DON'T CHANGE
+@FunctionalInterface
 public interface TaxStrategy {
     double extortCash(double income);
 }
