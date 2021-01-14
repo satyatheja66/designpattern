@@ -10,8 +10,6 @@ package strategy.exercise1;
 
 public class CompanyTaxStrategy implements TaxStrategy {
     private static final double RATE = 0.30;
-    private static final double EMPLOYEE_RATE = 0.45;
-    private static final double TRUST_RATE = 0.35;
     private final double income;
 
     public CompanyTaxStrategy(double income) {
