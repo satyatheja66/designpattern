@@ -10,13 +10,8 @@ package strategy.exercise1;
 
 public class EmployeeTaxStrategy implements TaxStrategy {
     private static final double RATE = 0.45;
-    private final double income;
 
-    public EmployeeTaxStrategy(double income) {
-        this.income = income;
-    }
-
-    public double extortCash() {
+    public double extortCash(double income) {
         return income * RATE;
     }
 }

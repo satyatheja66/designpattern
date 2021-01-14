@@ -21,13 +21,13 @@ public class TaxPayer {
     public TaxPayer(int type, double income) {
         switch (type) {
             case COMPANY:
-                taxStrategy = new CompanyTaxStrategy(income);
+                taxStrategy = new CompanyTaxStrategy();
                 break;
             case EMPLOYEE:
-                taxStrategy = new EmployeeTaxStrategy(income);
+                taxStrategy = new EmployeeTaxStrategy();
                 break;
             case TRUST:
-                taxStrategy = new TrustTaxStrategy(income);
+                taxStrategy = new TrustTaxStrategy();
                 break;
             default:
                 throw new IllegalArgumentException();
@@ -40,6 +40,6 @@ public class TaxPayer {
     }
 
     public double extortCash() {
-        return taxStrategy.extortCash();
+        return taxStrategy.extortCash(income);
     }
 }
