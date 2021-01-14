@@ -41,4 +41,24 @@ public class LabRat {
     public boolean isAlive() {
         return alive;
     }
+
+    public Memento createMemento() {
+        return new MementoImpl(this);
+    }
+
+    public void setMemento(Memento m) {
+        MementoImpl mi = (MementoImpl) m;
+        this.alive = mi.alive;
+        this.cd4Ratio = mi.cd4Ratio;
+    }
+
+    private static class MementoImpl implements Memento {
+        private final boolean alive;
+        private final double cd4Ratio;
+
+        public MementoImpl(LabRat labRat) {
+            this.alive = labRat.alive;
+            this.cd4Ratio = labRat.cd4Ratio;
+        }
+    }
 }
