@@ -7,7 +7,6 @@
  */
 package strategy.exercise1;
 
-//DON'T CHANGE
 public sealed interface TaxStrategy
     permits NonNaturalTaxStrategy, EmployeeTaxStrategy {
 
