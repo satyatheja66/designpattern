@@ -18,11 +18,11 @@ public abstract class Contact {
 
     public abstract void sendMail(String msg);
 
-    public boolean isLeaf() {
-        throw new UnsupportedOperationException("todo");
+    public final boolean isLeaf() {
+        return !(this instanceof DistributionList);
     }
 
     public Iterator<Contact> children() {
-        throw new UnsupportedOperationException("todo");
+        return NullIterator.getInstance();
     }
 }

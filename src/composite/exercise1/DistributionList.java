@@ -25,4 +25,8 @@ public class DistributionList extends Contact {
             contact.sendMail(msg);
         }
     }
+
+    public Iterator<Contact> children() {
+        return contacts.iterator();
+    }
 }
