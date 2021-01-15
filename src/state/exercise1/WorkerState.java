@@ -8,7 +8,7 @@
 
 package state.exercise1;
 
-public abstract class WorkerState extends State {
+public sealed class WorkerState extends State permits ProgrammerState, ManagerState {
     public void fire(StateModifier sm) {
         sm.setState(END);
     }

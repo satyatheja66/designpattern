@@ -7,7 +7,7 @@
  */
 package state.exercise1;
 
-public abstract class State {
+public sealed abstract class State permits WorkerState, RetireeState, EndState {
     public int pay(StateModifier sm) {
         return 0;
     }

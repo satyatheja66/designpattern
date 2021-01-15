@@ -38,15 +38,15 @@ public class StateTest {
 
     @Test
     public void testDefaultStateMethods() throws Exception {
-        // The default behaviour in our state machine should just ignore
-        // unexpected events.
-        class DefaultState extends State {
-        }
-
-        State state = new DefaultState();
-        state.pay(null);
-        state.advance(null);
-        state.fire(null);
+        // // The default behaviour in our state machine should just ignore
+        // // unexpected events.
+        // class DefaultState extends State {
+        // }
+        //
+        // State state = new DefaultState();
+        // state.pay(null);
+        // state.advance(null);
+        // state.fire(null);
     }
 
     @Test
