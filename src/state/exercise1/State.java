@@ -8,13 +8,17 @@
 package state.exercise1;
 
 public abstract class State {
-    public int pay(Employee employee) {
+    public int pay(StateModifier sm) {
         return 0;
     }
 
-    public void advance(Employee employee) {
+    public void advance(StateModifier sm) {
     }
 
-    public void fire(Employee employee) {
+    public void fire(StateModifier sm) {
+    }
+
+    public interface StateModifier {
+        void setState(State state);
     }
 }

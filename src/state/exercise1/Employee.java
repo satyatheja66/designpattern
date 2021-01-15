@@ -12,7 +12,7 @@ package state.exercise1;
  * ugly.  Your job is to use the state pattern to clean things
  * up.
  */
-public class Employee {
+public class Employee implements State.StateModifier {
     private State state = new ProgrammerState();
 
     public int pay() {
@@ -27,7 +27,7 @@ public class Employee {
         state.fire(this);
     }
 
-    void setState(State state) {
+    public void setState(State state) {
         System.out.println(this.state.getClass().getSimpleName() + " -> " +
             state.getClass().getSimpleName());
         this.state = state;

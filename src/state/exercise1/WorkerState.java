@@ -9,7 +9,7 @@
 package state.exercise1;
 
 public abstract class WorkerState extends State {
-    public void fire(Employee employee) {
-        employee.setState(new EndState());
+    public void fire(StateModifier sm) {
+        sm.setState(new EndState());
     }
 }
