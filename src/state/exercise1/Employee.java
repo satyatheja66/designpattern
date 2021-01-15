@@ -16,15 +16,15 @@ public class Employee {
     private State state = State.PROGRAMMER;
 
     public int pay() {
-        return state.pay(this::setState);
+        return state.pay();
     }
 
     public void advance() {
-        state.advance(this::setState);
+        setState(state.advance());
     }
 
     public void fire() {
-        state.fire(this::setState);
+        setState(state.fire());
     }
 
     private void setState(State state) {

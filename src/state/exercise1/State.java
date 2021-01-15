@@ -8,14 +8,16 @@
 package state.exercise1;
 
 public sealed abstract class State permits WorkerState, RetireeState, EndState {
-    public int pay(StateModifier sm) {
+    public int pay() {
         return 0;
     }
 
-    public void advance(StateModifier sm) {
+    public State advance() {
+        return this;
     }
 
-    public void fire(StateModifier sm) {
+    public State fire() {
+        return this;
     }
 
     public interface StateModifier {

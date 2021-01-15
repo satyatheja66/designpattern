@@ -9,7 +9,7 @@
 package state.exercise1;
 
 public sealed class WorkerState extends State permits ProgrammerState, ManagerState {
-    public void fire(StateModifier sm) {
-        sm.setState(END);
+    public State fire() {
+        return END;
     }
 }

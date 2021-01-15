@@ -9,12 +9,12 @@
 package state.exercise1;
 
 public final class RetireeState extends State {
-    public int pay(StateModifier sm) {
+    public int pay() {
         System.out.println("Handing out crumbs to retiree");
         return 5000;
     }
 
-    public void advance(StateModifier sm) {
-        sm.setState(END);
+    public State advance() {
+        return END;
     }
 }
