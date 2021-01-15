@@ -8,6 +8,7 @@
 package command.exercise2;
 
 //DON'T CHANGE
+@FunctionalInterface
 public interface Command {
     void execute();
 }
