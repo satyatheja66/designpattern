@@ -12,22 +12,27 @@ package state.exercise1;
  * ugly.  Your job is to use the state pattern to clean things
  * up.
  */
-public class Employee implements State.StateModifier {
+public class Employee {
     private State state = new ProgrammerState();
+    private final State.StateModifier sm = new State.StateModifier() {
+        public void setState(State state) {
+            Employee.this.setState(state);
+        }
+    };
 
     public int pay() {
-        return state.pay(this);
+        return state.pay(sm);
     }
 
     public void advance() {
-        state.advance(this);
+        state.advance(sm);
     }
 
     public void fire() {
-        state.fire(this);
+        state.fire(sm);
     }
 
-    public void setState(State state) {
+    private void setState(State state) {
         System.out.println(this.state.getClass().getSimpleName() + " -> " +
             state.getClass().getSimpleName());
         this.state = state;
