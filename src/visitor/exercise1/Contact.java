@@ -15,4 +15,6 @@ public abstract class Contact {
     }
 
     public abstract void sendMail(String msg);
+
+    public abstract void accept(Visitor v);
 }

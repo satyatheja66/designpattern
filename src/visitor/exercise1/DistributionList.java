@@ -24,4 +24,13 @@ public class DistributionList extends Contact {
     public void sendMail(String msg) {
         contacts.forEach(contact -> contact.sendMail(msg));
     }
+
+    public int getNumberOfChildren() {
+        return contacts.size();
+    }
+
+    public void accept(Visitor v) {
+        v.visitDistributionList(this);
+        contacts.forEach(c -> c.accept(v));
+    }
 }

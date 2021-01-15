@@ -19,4 +19,12 @@ public class Person extends Contact {
         System.out.println("Msg: " + msg);
         System.out.println();
     }
+
+    public void accept(Visitor v) {
+        v.visitPerson(this);
+    }
+
+    public String getEmail() {
+        return email;
+    }
 }
