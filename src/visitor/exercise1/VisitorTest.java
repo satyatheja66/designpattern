@@ -146,5 +146,7 @@ public class VisitorTest {
         assertEquals("d@a.ws", it.next());
         assertEquals("e@a.ws", it.next());
         assertEquals("f@a.ws", it.next());
+
+        root.accept(new EmailSendingVisitor("Welcome to the 135th edition of ..."));
     }
 }

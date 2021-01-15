@@ -21,10 +21,6 @@ public class DistributionList extends Contact {
         contacts.remove(contact);
     }
 
-    public void sendMail(String msg) {
-        contacts.forEach(contact -> contact.sendMail(msg));
-    }
-
     public int getNumberOfChildren() {
         return contacts.size();
     }
