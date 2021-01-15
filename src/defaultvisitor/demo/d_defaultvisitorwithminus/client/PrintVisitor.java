@@ -5,10 +5,10 @@
  *
  * Copyright 2001-2018, Heinz Kabutz, All rights reserved.
  */
-package defaultvisitor.demo.c_defaultvisitor.client;
+package defaultvisitor.demo.d_defaultvisitorwithminus.client;
 
-import defaultvisitor.demo.c_defaultvisitor.framework.Number;
-import defaultvisitor.demo.c_defaultvisitor.framework.*;
+import defaultvisitor.demo.d_defaultvisitorwithminus.framework.Number;
+import defaultvisitor.demo.d_defaultvisitorwithminus.framework.*;
 
 public class PrintVisitor implements DefaultVisitor {
     protected final StringBuilder sb = new StringBuilder();
