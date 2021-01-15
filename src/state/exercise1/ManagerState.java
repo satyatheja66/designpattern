@@ -8,7 +8,7 @@
 
 package state.exercise1;
 
-public class ManagerState extends State {
+public class ManagerState extends WorkerState {
     public int pay(Employee employee) {
         System.out.println("Paying lots of $$$ to manager");
         return 30000;
@@ -16,9 +16,5 @@ public class ManagerState extends State {
 
     public void advance(Employee employee) {
         employee.setState(new RetireeState());
-    }
-
-    public void fire(Employee employee) {
-        employee.setState(new EndState());
     }
 }
