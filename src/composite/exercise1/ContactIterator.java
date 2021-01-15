@@ -15,16 +15,43 @@ import java.util.*;
  * whether there is a next element or not.
  */
 public class ContactIterator implements Iterator<Contact> {
+    private final Deque<Iterator<Contact>> unfinishedIterators = new ArrayDeque<>();
+    private Contact nextContact;
+    private boolean readyForRemove = false;
+    private Iterator<Contact> iterator;
+
     public ContactIterator(Contact contact) {
-        throw new UnsupportedOperationException("todo");
+        if (contact.isLeaf()) nextContact = contact;
+        else unfinishedIterators.addLast(contact.children());
     }
 
     public boolean hasNext() {
-        throw new UnsupportedOperationException("todo");
+        if (nextContact == null) {
+            nextContact = findNextContact();
+        }
+        return nextContact != null;
+    }
+
+    private Contact findNextContact() {
+        while(!unfinishedIterators.isEmpty()) {
+            iterator = unfinishedIterators.peekLast();
+            if (iterator.hasNext()) {
+                Contact contact = iterator.next();
+                if (contact.isLeaf()) return contact;
+                else unfinishedIterators.addLast(contact.children());
+            } else {
+                unfinishedIterators.removeLast();
+            }
+        }
+        return null;
     }
 
     public Contact next() {
-        throw new UnsupportedOperationException("todo");
+        if (!hasNext()) throw new NoSuchElementException();
+        Contact result = nextContact;
+        nextContact = null;
+        readyForRemove = true;
+        return result;
     }
 
     /**
@@ -33,6 +60,9 @@ public class ContactIterator implements Iterator<Contact> {
      * the composite tree structure.
      */
     public void remove() {
-        throw new UnsupportedOperationException("todo");
+        if (!readyForRemove) throw new IllegalStateException();
+        if (iterator == null) throw new IllegalStateException(); // root was a leaf
+        iterator.remove();
+        readyForRemove = false;
     }
 }
