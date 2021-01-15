@@ -15,6 +15,6 @@ public class ManagerState extends WorkerState {
     }
 
     public void advance(StateModifier sm) {
-        sm.setState(new RetireeState());
+        sm.setState(RETIREE);
     }
 }

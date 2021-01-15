@@ -10,6 +10,6 @@ package state.exercise1;
 
 public abstract class WorkerState extends State {
     public void fire(StateModifier sm) {
-        sm.setState(new EndState());
+        sm.setState(END);
     }
 }

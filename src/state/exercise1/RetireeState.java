@@ -15,6 +15,6 @@ public class RetireeState extends State {
     }
 
     public void advance(StateModifier sm) {
-        sm.setState(new EndState());
+        sm.setState(END);
     }
 }

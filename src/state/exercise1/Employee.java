@@ -13,7 +13,7 @@ package state.exercise1;
  * up.
  */
 public class Employee {
-    private State state = new ProgrammerState();
+    private State state = State.PROGRAMMER;
 
     public int pay() {
         return state.pay(this::setState);

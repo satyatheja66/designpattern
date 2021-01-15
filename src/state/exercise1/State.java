@@ -21,4 +21,9 @@ public abstract class State {
     public interface StateModifier {
         void setState(State state);
     }
+
+    public static final State PROGRAMMER = new ProgrammerState();
+    public static final State MANAGER = new ManagerState();
+    public static final State RETIREE = new RetireeState();
+    public static final State END = new EndState();
 }
